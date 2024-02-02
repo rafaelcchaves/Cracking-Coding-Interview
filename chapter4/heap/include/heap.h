@@ -9,10 +9,12 @@ class MinHeap {
     private:
         std::vector<int> heap;
         void fixFromDown(int index);
-        void fixFromUp(int index);
+        void fixFromTop(int index);
     public:
-        int getMin();
+	MinHeap();
+        int top();
         int pop();
+	int size();
         void push(int value);
 };
 

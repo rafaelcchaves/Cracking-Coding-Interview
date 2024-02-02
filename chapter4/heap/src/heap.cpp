@@ -1,5 +1,7 @@
 #include "heap.h"
 
+MinHeap::MinHeap(){}
+
 void MinHeap::fixFromDown(int index){
     if(index == 0)
         return;
@@ -10,7 +12,7 @@ void MinHeap::fixFromDown(int index){
     }
 }
 
-void MinHeap::fixFromUp(int index){
+void MinHeap::fixFromTop(int index){
 	int left_child = 2*index+1;
 	int right_child = 2*index+2;
 	int child_index = -1;
@@ -23,11 +25,11 @@ void MinHeap::fixFromUp(int index){
 
 	if(child_index != -1 and heap[child_index] < heap[index]){
 		std::swap(heap[child_index], heap[index]);
-		fixFromUp(child_index);
+		fixFromTop(child_index);
 	}
 }
 
-int MinHeap::getMin(){
+int MinHeap::top(){
     return heap[0];
 }
 
@@ -35,8 +37,12 @@ int MinHeap::pop(){
     int value = heap[0];
     heap[0] = heap.back();
     heap.pop_back();
-    fixFromUp(0);
+    fixFromTop(0);
     return value;
+}
+
+int MinHeap::size(){
+    return heap.size();	
 }
 
 void MinHeap::push(int value){

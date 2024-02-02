@@ -1,6 +1,8 @@
 all: heap main
-	g++ main.o heap.o -o main 
+	g++ bin/main.o bin/heap.o -o bin/main 
 heap:
-	g++ -c heap.cpp -o heap.o
+	g++ -c src/heap.cpp -o bin/heap.o -Iinclude
 main:
-	g++ -c main.cpp -o main.o
+	g++ -c src/main.cpp -o bin/main.o -Iinclude
+clean:
+	rm bin/*
