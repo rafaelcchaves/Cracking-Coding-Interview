@@ -14,10 +14,14 @@ int main(){
 	std::cout << std::endl;
 	std::cout << "InOrder: " << std::endl;
 	tree.inOrder(tree.root);
+	std::cout << "Min and Max: " << std::endl;
+	std::cout << tree.findMin() << ' ' << tree.findMax() << std::endl;
 	std::cout << "Successfull remove? ";
 	std::cout << (tree.remove(5)?"TRUE":"FALSE") << std::endl;
 	std::cout << "After Deleting Subtree" << std::endl;
 	std::cout << "InOrder: " << std::endl;
 	tree.inOrder(tree.root);
+	std::cout << "Min and Max: " << std::endl;
+	std::cout << tree.findMin() << ' ' << tree.findMax() << std::endl;
 
 }

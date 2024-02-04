@@ -48,7 +48,36 @@ bool Tree::remove(Node **ptr, int value){
     return remove(ptr_right, value);
 }
 
+int Tree::findMin(){
+    if(root == NULL)
+	return INT_MAX;
+    Node* node = *findMin(&root);
+    return node->value;
+}
+int Tree::findMax(){
+    if(root == NULL)
+	return INT_MIN;
+    Node* node = *findMax(&root);
+    return node->value;
+}
 
+Node** Tree::findMin(Node** ptr){
+    Node* node = *ptr;
+    if(node == NULL)
+	return NULL;
+    if(node->left == NULL)
+	return ptr;
+    return findMin(&(node->left));
+}
+
+Node** Tree::findMax(Node** ptr){
+    Node* node = *ptr;
+    if(node == NULL)
+	return NULL;
+    if(node->right == NULL)
+	return ptr;
+    return findMax(&(node->right));
+}
 
 void Tree::inOrder(Node* node){
 	if(node == NULL) return;
