@@ -1,9 +1,5 @@
 #include "node.h"
 
-int Node::getValue(){
-	return value;
-}
-
 bool Node::addLeft(Node *children){
 	if(left != NULL) return false;
 	left = children; return true;
@@ -12,10 +8,6 @@ bool Node::addLeft(Node *children){
 bool Node::removeLeft(){
 	if(left == NULL) return false;
 	left = NULL; return true;
-}
-
-Node* Node::getLeft(){
-	return left;
 }
 
 bool Node::addRight(Node *children){
@@ -27,12 +19,3 @@ bool Node::removeRight(){
 	if(right == NULL) return false;
 	right = NULL; return true;
 }
-
-Node* Node::getRight(){
-	return right;
-}
-
-
-
-
-

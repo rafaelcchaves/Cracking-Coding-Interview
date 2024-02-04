@@ -7,17 +7,17 @@
 
 class Tree {
 	private:
-		Node *root;
+		bool insert(Node** ptr, int value);
+		bool remove(Node** ptr, int value);
 	public:
 		Tree(): root(NULL) {};
-		bool removeNodeSubtree(int value);
-		void addNode(int value);
-		void addNode(Node* node);
+		bool remove(int value);
+		bool insert(int value);
 		void inOrder(Node* node);
 		void preOrder(Node* node);
 		void postOrder(Node* node);
 		void visit(Node* node);
-		Node* getRoot();
+		Node *root;
 };
 
 #endif

@@ -5,14 +5,10 @@
 #include <iostream>
 
 class Node {
-	private:
+	public:
 		int value;
 		Node *left, *right;
-	public:
 		Node(int value): value(value) {};
-		int getValue();
-		Node* getLeft();
-		Node* getRight();
 		bool addLeft(Node *children);
 		bool addRight(Node *children);
 		bool removeLeft();
